@@ -2,13 +2,13 @@ package com.bankdb.queries;
 
 public class EmployeeQueries {
 
-    // ===== TABLE VALIDATION QUERIES =====
+
 
     public static final String GET_ALL_TABLES =
             "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES " +
                     "WHERE TABLE_SCHEMA = 'employees'";
 
-    // ===== ROW COUNT QUERIES =====
+
 
     public static final String COUNT_EMPLOYEES =
             "SELECT COUNT(*) FROM employees";
@@ -19,17 +19,17 @@ public class EmployeeQueries {
     public static final String COUNT_SALARIES =
             "SELECT COUNT(*) FROM salaries";
 
-    // ===== DATA INTEGRITY QUERIES =====
+
 
     public static final String COUNT_NULLS =
             "SELECT COUNT(*) FROM %s WHERE %s IS NULL";
 
-    // Duplicate employees check
+
     public static final String FIND_DUPLICATES =
             "SELECT emp_no, COUNT(*) as cnt FROM employees " +
                     "GROUP BY emp_no HAVING cnt > 1";
 
-    // Invalid salary check (minus salary, too high salary)
+
     public static final String INVALID_SALARIES =
             "SELECT emp_no, salary FROM salaries " +
                     "WHERE salary < 0 OR salary > 500000";
@@ -43,9 +43,7 @@ public class EmployeeQueries {
             "SELECT emp_no, birth_date, hire_date FROM employees " +
                     "WHERE hire_date <= birth_date";
 
-    // ===== JOIN QUERIES =====
 
-    // Employee with department and salary info
     public static final String EMPLOYEE_FULL_DETAILS =
             "SELECT e.emp_no, e.first_name, e.last_name, " +
                     "d.dept_name, s.salary, t.title " +
@@ -59,7 +57,7 @@ public class EmployeeQueries {
                     "AND t.to_date = '9999-01-01' " +
                     "LIMIT 1000";
 
-    // Average salary per department
+
     public static final String AVG_SALARY_BY_DEPT =
             "SELECT d.dept_name, ROUND(AVG(s.salary), 2) as avg_salary " +
                     "FROM salaries s " +

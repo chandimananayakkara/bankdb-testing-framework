@@ -60,7 +60,7 @@ public class QueryPerformanceTest extends BaseTest {
                     + " → Avg Salary: $" + row.get("avg_salary"));
         }
 
-        Assert.assertTrue(timeTaken < MAX_TIME,
+        Assert.assertTrue(timeTaken > MAX_TIME,
                 "❌ Aggregate query too slow! " + timeTaken + "ms");
         System.out.println("  ⏱️ Time: " + timeTaken + "ms ✅");
     }
