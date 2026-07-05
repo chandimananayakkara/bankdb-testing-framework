@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- ඔයා Selenium project වල testng.xml ලියලා
+     තියෙනවනේ - exactly same concept! -->
+
+<suite name="BankDB Test Automation Suite" verbose="2">
+
+    <test name="1. Table Structure Tests">
+        <classes>
+            <class name="com.bankdb.tests.TableStructureTest"/>
+        </classes>
+    </test>
+
+    <test name="2. Data Validation Tests">
+        <classes>
+            <class name="com.bankdb.tests.DataValidationTest"/>
+        </classes>
+    </test>
+
+    <test name="3. Query Performance Tests">
+        <classes>
+            <class name="com.bankdb.tests.QueryPerformanceTest"/>
+        </classes>
+    </test>
+
+</suite>
